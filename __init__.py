@@ -1,1 +1,1 @@
-import eda.eda as eda
+from easyeda.eda import eda

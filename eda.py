@@ -61,6 +61,18 @@ def stability_ks(data1,data2):
     return result[0]
 
 def eda(dftrain,dftest=pd.DataFrame(),language="Chinese"):
+    """
+    Examples:
+    ---------
+    >> from sklearn import datasets
+    >> from sklearn.model_selection import train_test_split
+    >> boston = datasets.load_boston()
+    >> df = pd.DataFrame(boston.data,columns = boston.feature_names)
+    >> df["label"] = boston.target
+    >> dftrain,dftest = train_test_split(df,test_size = 0.3)
+    >> dfeda = eda(dftrain,dftest,"English")
+    """
+    
     print("start exploration data analysis...")
     printlog('step1: count features & samples...')
     
@@ -132,7 +144,8 @@ def eda(dftrain,dftest=pd.DataFrame(),language="Chinese"):
 #================================================================================
 
 if __name__ == "__main__":
-
+    
+    import pandas as pd
     from sklearn import datasets
     from sklearn.model_selection import train_test_split
 
@@ -161,6 +174,7 @@ if __name__ == "__main__":
     # df["label"] = boston.target
     # dfdata = df.copy()
     # dftrain,dftest = train_test_split(df,test_size = 0.3)
+    
     dfeda = eda(dftrain,dftest,"English")
     print(dfeda)   
 

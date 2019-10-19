@@ -1,0 +1,7 @@
+README.md
+setup.py
+easyeda.egg-info/PKG-INFO
+easyeda.egg-info/SOURCES.txt
+easyeda.egg-info/dependency_links.txt
+easyeda.egg-info/requires.txt
+easyeda.egg-info/top_level.txt
