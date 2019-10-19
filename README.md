@@ -6,7 +6,7 @@ It can be used in both classification task and regression task.
 
 ## 2，Use Example
 
-First,you can use pip to install easyeda.
+First, you can use pip to install easyeda.
 
 ```bash
 pip install easyeda
@@ -31,7 +31,7 @@ dfeda = eda(dftrain,dftest,language="Chinese")
 
 ### 3，Contact to the author
 
-Github: https://github.com/lyhue1991/easyeda
+Github:  https://github.com/lyhue1991/easyeda
 
-Email:lyhue1991@163.com
+Email: lyhue1991@163.com
 
