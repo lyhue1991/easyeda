@@ -1,13 +1,14 @@
 ## 1，Introduction
 
-The edakit is a simple but useful tool to do Exploratory Data Analysis in Machine Learning.
+The easyeda is a simple but useful tool to do Exploratory Data Analysis in Machine Learning.
 It can be used in both classification task and regression task. 
 
 
 ## 2，Use Example
 
 ```python
-from edakit import eda
+from easyeda import eda
+import pandas ad pd
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 
