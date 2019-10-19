@@ -14,6 +14,14 @@ Description: ## 1，Introduction
         
         ## 2，Use Example
         
+        First,you can use pip to install easyeda.
+        
+        ```bash
+        pip install easyeda
+        ```
+        
+        Then, you can use it like below.
+        
         ```python
         from easyeda import eda
         import pandas ad pd
@@ -28,6 +36,13 @@ Description: ## 1，Introduction
         dfeda = eda(dftrain,dftest,language="Chinese")
         
         ```
+        
+        ### 3，Contact to the author
+        
+        Github: https://github.com/lyhue1991/easyeda
+        
+        Email:lyhue1991@163.com
+        
         
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
