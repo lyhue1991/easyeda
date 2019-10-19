@@ -3,45 +3,11 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 from collections import Counter
-from sklearn.model_selection import train_test_split
+
 
 from tqdm import tqdm
 tqdm.pandas(desc="progress")
 
-#================================================================================
-# You can change the code here below! 可以改动以下配置代码。
-#================================================================================
-from sklearn import datasets
-task_name = 'example'
-
-
-#二分类问题范例
-breast = datasets.load_breast_cancer()
-df = pd.DataFrame(breast.data,
-       columns = breast.feature_names)
-df["label"] = breast.target
-dfdata = df.copy()
-dftrain,dftest = train_test_split(df,test_size = 0.3)
-
-# 多分类问题范例
-# iris = datasets.load_iris()
-# df = pd.DataFrame(iris.data,
-#         columns = [x.replace(" (cm)","").replace(" ","_") for x in iris.feature_names])
-# df["label"] = iris.target
-# dfdata = df.copy()
-# dftrain,dftest = train_test_split(df,test_size = 0.3)
-
-
-# # 回归问题范例
-# boston = datasets.load_boston()
-# df = pd.DataFrame(boston.data,
-#         columns = boston.feature_names)
-# df["label"] = boston.target
-# dfdata = df.copy()
-# dftrain,dftest = train_test_split(df,test_size = 0.3)
-
-
-outputfile = 'xx_eda_result_' + task_name
 
 #================================================================================
 #Don't change the code below!!! 以下代码请勿轻易改动。
@@ -157,6 +123,44 @@ def eda(dftrain,dftest = pd.DataFrame()):
 
     printlog('tast end...\n\n')
     return dfeda_zh
+
+#================================================================================
+# You can change the code here below! 可以改动以下配置代码。
+#================================================================================
+
+if __name__ == "__main__":
+
+    from sklearn import datasets
+    from sklearn.model_selection import train_test_split
+    task_name = 'example'
+
+
+    #二分类问题范例
+    breast = datasets.load_breast_cancer()
+    df = pd.DataFrame(breast.data,
+           columns = breast.feature_names)
+    df["label"] = breast.target
+    dfdata = df.copy()
+    dftrain,dftest = train_test_split(df,test_size = 0.3)
+
+    # 多分类问题范例
+    # iris = datasets.load_iris()
+    # df = pd.DataFrame(iris.data,
+    #         columns = [x.replace(" (cm)","").replace(" ","_") for x in iris.feature_names])
+    # df["label"] = iris.target
+    # dfdata = df.copy()
+    # dftrain,dftest = train_test_split(df,test_size = 0.3)
+
+
+    # # 回归问题范例
+    # boston = datasets.load_boston()
+    # df = pd.DataFrame(boston.data,
+    #         columns = boston.feature_names)
+    # df["label"] = boston.target
+    # dfdata = df.copy()
+    # dftrain,dftest = train_test_split(df,test_size = 0.3)
+    dfeda = eda(dftrain,dftest)
+    print(dfeda)   
 
 ######
 #####
