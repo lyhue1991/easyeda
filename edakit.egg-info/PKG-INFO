@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: edakit
+Version: 1.0
+Summary: UNKNOWN
+Home-page: https://github.com/lyhue1991/edakit
+Author: Python_Ai_Road
+Author-email: lyhue1991@163.com
+License: UNKNOWN
+Description: Built-in functions, exceptions, and other objects.
+        
+        Noteworthy: None is the `nil' object; Ellipsis represents `...' in slices.
+Platform: UNKNOWN

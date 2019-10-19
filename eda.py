@@ -60,7 +60,7 @@ def stability_ks(data1,data2):
     result = stats.ks_2samp(data1,data2)
     return result[0]
 
-def eda(dftrain,dftest = pd.DataFrame()):
+def eda(dftrain,dftest=pd.DataFrame(),language="Chinese"):
     print("start exploration data analysis...")
     printlog('step1: count features & samples...')
     
@@ -77,7 +77,7 @@ def eda(dftrain,dftest = pd.DataFrame()):
 
     dfeda = pd.DataFrame( np.zeros((n_features,8)),
         columns = ['not_nan_ratio','not_nan_zero_ratio','not_nan_zero_minus1_ratio',
-                   'classes_count','most','relativity_ks','stability_ks','distribution'])
+                   'classes_count','most','relativity','stability','distribution'])
     dfeda.index = dftrain.columns
 
 
@@ -105,15 +105,15 @@ def eda(dftrain,dftest = pd.DataFrame()):
         dfeda['most'] = dftrain.mode().iloc[0,:].T
 
 
-    printlog('step7: evaluate relativity ks...\n')
-    dfeda['relativity_ks'] = dftrain.progress_apply(lambda x: relativity_ks(dftrain['label'],x))
+    printlog('step7: evaluate relativity...\n')
+    dfeda['relativity'] = dftrain.progress_apply(lambda x: relativity_ks(dftrain['label'],x))
 
 
-    printlog('step8: evaluate stability ks...\n')
+    printlog('step8: evaluate stability...\n')
     if len(dftest)==0:
-        dfeda['stability_ks'] = np.nan
+        dfeda['stability'] = np.nan
     else:
-        dfeda['stability_ks'] = dftrain.progress_apply(lambda x: 1-stability_ks(x,dftest[x.name]))
+        dfeda['stability'] = dftrain.progress_apply(lambda x: 1-stability_ks(x,dftest[x.name]))
     
     printlog('step9: evaluate value distribution...\n')
     dfeda['distribution'] = dftrain.progress_apply(lambda x:Counter(x).most_common(10))
@@ -122,7 +122,10 @@ def eda(dftrain,dftest = pd.DataFrame()):
     dfeda_zh.columns = [u'非空率',u'非空非零率',u'非空非零非负1率',u'取值类别数',u'众数',u'相关性',u'同分布性',u'取值分布']   
 
     printlog('tast end...\n\n')
-    return dfeda_zh
+    if language=="Chinese":
+        return dfeda_zh
+    else:
+        return dfeda
 
 #================================================================================
 # You can change the code here below! 可以改动以下配置代码。
@@ -132,7 +135,6 @@ if __name__ == "__main__":
 
     from sklearn import datasets
     from sklearn.model_selection import train_test_split
-    task_name = 'example'
 
 
     #二分类问题范例
@@ -159,7 +161,7 @@ if __name__ == "__main__":
     # df["label"] = boston.target
     # dfdata = df.copy()
     # dftrain,dftest = train_test_split(df,test_size = 0.3)
-    dfeda = eda(dftrain,dftest)
+    dfeda = eda(dftrain,dftest,"English")
     print(dfeda)   
 
 ######
