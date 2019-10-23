@@ -16,11 +16,11 @@ Then, you can use it like below.
 
 ```python
 from easyeda import eda
-import pandas ad pd
+import pandas as pd
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 
-## 
+
 boston = datasets.load_boston()
 df = pd.DataFrame(boston.data,columns = boston.feature_names)
 df["label"] = boston.target
@@ -28,6 +28,8 @@ dftrain,dftest = train_test_split(df,test_size = 0.3)
 dfeda = eda(dftrain,dftest,language="Chinese")
 
 ```
+![](readme.jpg)
+
 
 ### 3，Contact to the author
 

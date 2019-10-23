@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: easyeda
-Version: 1.0
+Version: 2.0
 Summary: A useful tool to Exploratory Data Analysis
 Home-page: https://github.com/lyhue1991/easyeda
 Author: PythonAiRoad
@@ -14,7 +14,7 @@ Description: ## 1，Introduction
         
         ## 2，Use Example
         
-        First,you can use pip to install easyeda.
+        First, you can use pip to install easyeda.
         
         ```bash
         pip install easyeda
@@ -24,7 +24,7 @@ Description: ## 1，Introduction
         
         ```python
         from easyeda import eda
-        import pandas ad pd
+        import pandas as pd
         from sklearn import datasets
         from sklearn.model_selection import train_test_split
         
@@ -39,9 +39,9 @@ Description: ## 1，Introduction
         
         ### 3，Contact to the author
         
-        Github: https://github.com/lyhue1991/easyeda
+        Github:  https://github.com/lyhue1991/easyeda
         
-        Email:lyhue1991@163.com
+        Email: lyhue1991@163.com
         
         
 Platform: UNKNOWN

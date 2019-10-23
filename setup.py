@@ -23,7 +23,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="easyeda",
-    version="1.0",
+    version="2.0",
     author="PythonAiRoad",
     author_email="lyhue1991@163.com",
     description="A useful tool to Exploratory Data Analysis",
@@ -31,13 +31,11 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/lyhue1991/easyeda",
     packages=setuptools.find_packages(),
-    install_requires=[           # 依赖列表
-        'pandas>=0.24.2',     
-        'tqdm>=4.31.1'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.5',
+    python_requires='>=3.5'
 )
+
